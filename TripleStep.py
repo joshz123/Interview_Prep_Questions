@@ -12,6 +12,13 @@ def triple_step(n):
     else:
         values[n]= triple_step(n-1)+triple_step(n-2)+triple_step(n-3)
         return values[n]
+def triple_step_tab(n):
+    vals = [0,1,2,4]
+    if n<=3:
+        return vals[n]
+    for i in range(4,n+1):
+        vals.append(vals[i-1]+vals[i-2]+vals[i-3])
 
-
-print(triple_step(110))
+    return vals[n]
+#print(triple_step(2000))
+print(triple_step_tab(1000000))
